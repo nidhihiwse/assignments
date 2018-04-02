@@ -1,0 +1,34 @@
+<!DOCtype html>
+<html>
+<head>
+     
+     <script src="./assets/angular.min.js"></script>
+     <script src="./assets/module.js"></script>
+     <script src="./views/bookList/bookListCtrl.js"></script>
+     <script src="./views/bookInfoEdit/book_info_editCtrl.js"></script>
+     <script src="./views/authorList/author_listCtrl.js"></script>
+     <script src="./views/authorInfoEdit/author_info_editCtrl.js"></script>
+     <script src="./views/addNewBook/add_new_bookCtrl.js"></script>
+     <script src="./views/addNewAuthor/add_new_authorCtrl.js"></script>
+     <script src="./router/route.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+
+<body>
+  <h1><u>LIBRARY MANAGEMENT SYSTEM</u></h1><br>
+    
+  <div ng-app="myApp" >
+      <a href="http://127.0.0.1:8080/#/" ><button  title="go to home" class="btn3 home">Home</button></a><br>
+    
+      <div  ng-view></div>  
+  
+  </div>   
+ 
+</body>
+</html>

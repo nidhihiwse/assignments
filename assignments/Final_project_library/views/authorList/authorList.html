@@ -1,0 +1,47 @@
+<!-- for displaying author list(table)-->
+<p><u>Author List</u></p>    
+<div class="row">
+    <div class="col-sm-3"></div>
+     <div  align="center"  class="col-sm-6">
+        <div class="input-group">
+        <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon1"></span>
+        <input  type="text" ng-model="searchText" placeholder="Search Author By Id name and email"  class="form-control" aria-describedby="basic-addon1">
+         </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+                <br>
+       
+   <div class="row">
+   <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+               <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th><a ng-click="sortType='empid';sortReverse=!sortReverse" title="Click on sort">Author Id
+          <span ng-show="sortType == 'empid' && !sortReverse" class="glyphicon glyphicon-menu-down"></span>
+              <span ng-show="sortType == 'empid' && sortReverse" class="glyphicon glyphicon-menu-up"></span></a></th>
+                            
+                            
+                            <th><a ng-click="sortType='name';sortReverse=!sortReverse" title="Click on sort">Author Name
+          <span ng-show="sortType == 'name' && !sortReverse" class="glyphicon glyphicon-menu-down"></span>
+              <span ng-show="sortType == 'name' && sortReverse" class="glyphicon glyphicon-menu-up"></span></a></th>
+                            
+                            <th><a ng-click="sortType='email';sortReverse=!sortReverse" title="Click on sort">Email
+          <span ng-show="sortType == 'email' && !sortReverse" class="glyphicon glyphicon-menu-down"></span>
+              <span ng-show="sortType == 'email' && sortReverse" class="glyphicon glyphicon-menu-up"></span></a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in books | filter:searchText|orderBy:sortType:sortReverse">
+                            <td>{{$index+1}}</td>
+                            <td>{{x.empid}}</td>
+                            <td><a href="#screen3?name={{x.name}}">{{x.name}}</a></td>
+                            <td>{{x.email}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+           </div>
+    <div class="col-sm-2"></div>
+</div> 

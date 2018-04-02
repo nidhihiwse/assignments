@@ -1,0 +1,89 @@
+*{
+ box-sizing:border-box;
+ }
+
+
+/*for heading*/
+h1,h2{ 
+      text-align: center;
+      text-shadow: 2px 2px 5px #65a9d7
+     }
+
+p{
+    margin-left:45%;
+    font-size:36px;
+    text-shadow: 2px 2px 5px #65a9d7;
+ }
+
+
+/* for table*/
+
+
+td a{
+    text-decoration:none;
+    }
+th a{
+    text-decoration:none;
+    color:white;
+    }
+th a:hover{
+     color:white;
+     text-decoration: none;
+          }
+td{font-size: 20px;}
+
+table{border:1px solid black;}
+th {
+    background-color: #3079AB;
+    color:white;
+    height: 30px;
+    font-size: 24px;
+   }
+
+/*for background image*/
+body{
+    background-image: url("../images/boy.jpg"),url("../images/bbook.jpg");
+    background-position:20px 170px, 20px 100px ;
+    background-repeat: no-repeat,repeat;
+    padding: 20px;
+    }
+
+
+/*for buttons*/
+button a{
+         text-decoration: none;
+        }
+.btn2,.btn1 { 
+             background-color: #3079AB;
+             padding:15px;
+             border-radius:15px; 
+             color:white;
+             outline:none;
+             font-size:20px; 
+             }
+
+.btn2:hover{background-color:#65a9d7 }
+.btn1:hover{background-color:#65a9d7 }
+
+
+.home{margin-left:70px;float:left;}
+.btn3{
+      border-radius:15px;
+      background-color:dimgrey;
+      padding: 15px;
+      color:white;
+      font-size:20px; 
+     }
+ 
+.btn3:hover{background-color:#65a9d7; outline:none; }
+
+.btn4{
+      background-color: #3079AB;
+      border-radius: 10px;
+      padding: 10px 15px;
+      color:white;
+      outline:none;
+      font-size:20px; 
+     }
+.btn4:hover{background-color:#65a9d7 }
+

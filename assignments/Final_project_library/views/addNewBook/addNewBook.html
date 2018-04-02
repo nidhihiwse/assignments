@@ -1,0 +1,60 @@
+
+
+		<u><h2>AddNewBook</h2></u>
+			<form class="form-horizontal" name="myForm" novalidate>
+				<div class="form-group">
+					<label class="control-label col-sm-4" >ISBN</label>
+						<div class="col-sm-6">
+							<input  type="text"  class="form-control" name="bookisbn" ng-model="book.isbn" id="isbn" placeholder="ISBN"  required>
+							<span style="color:red" ng-show="myForm.bookisbn.$dirty && myForm.bookisbn.$invalid">
+							<span ng-show="myForm.bookisbn.$error.required">ISBN is required.</span>
+							</span>
+						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4">Book Title</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" ng-model="book.title" name="booktitle" id="booktitle" placeholder="Book Title" required>
+							<span style="color:red" ng-show="myForm.booktitle.$dirty && myForm.booktitle.$invalid">
+							<span ng-show="myForm.booktitle.$error.required">Book title is required</span>
+							</span>
+						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4">Book Author</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" ng-model="book.author" name="bookauthor" id="bookauthor" placeholder="Book Author" required>
+							<span style="color:red" ng-show="myForm.bookauthor.$dirty && myForm.bookauthor.$invalid">
+							<span ng-show="myForm.bookauthor.$error.required">Please enter authorname</span>
+							</span>
+						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4">Book Price</label>
+						<div class="col-sm-6">
+							<input type="number" class="form-control" ng-model="book.price" id="bookprice" placeholder="Book Price" required>
+						</div>
+				</div>
+				
+
+				<div class="form-group">
+					<label class="control-label col-sm-4">Available On</label>
+						<div class="col-sm-6">
+						<div ng-repeat="availableOn in listofavailable">
+							<input type="checkbox" ng-model="availableOn.checked"/>
+								{{ availableOn.name }}
+						</div>
+
+						</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-6">
+
+                        <button type="button"  ng-click="add(book)" class="btn btn-info active" ng-disabled="myForm.$invalid ">Add New Book</button>
+                        <button type="button" class="btn btn-info active" ng-click="reset()">RESET</button>
+                       
+					</div>
+				</div>
+			</form>
+	

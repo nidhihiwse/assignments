@@ -1,0 +1,73 @@
+<!-- for displaying book list(table)-->
+
+<div class="row">
+    <div align="center" class="col-sm-3">
+       <a href="#screen4"><button class="btn1">Add New Book</button></a>
+    </div>
+    <div  class="col-sm-2"></div>
+    <div  align="right" class="col-sm-3"> <a href="#screen5"><button class="btn2">Add New Author</button></a>
+    </div>
+    <div class="col-sm-2"><a href="#screen6"><button class="btn3 ">Author list</button></a> 
+    </div>
+
+</div><br>
+
+<div class="row">
+    <div class="col-sm-3"></div>
+    
+    
+    <div  align="center"  class="col-sm-6">
+        <div class="input-group">
+        <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon1"></span>
+        <input  type="search" ng-model="search" placeholder="Search Books By Isbn,Title,Author Name"  class="form-control" aria-describedby="basic-addon1">
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div><br>
+
+
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8">    
+<table class="table">
+    <thead>
+    <tr>
+          <th>Index</th>
+         <th> <a ng-click="sortType='isbn'; sortReverse=!sortReverse" title="Click on sort">ISBN
+<span ng-show="sortType == 'isbn' && !sortReverse" class="glyphicon glyphicon-menu-down"></span>
+              <span ng-show="sortType == 'isbn' && sortReverse" class="glyphicon glyphicon-menu-up"></span>
+             </a></th>
+         
+        
+        
+        <th><a ng-click="sortType='title';sortReverse=!sortReverse" title="Click on sort">Title
+          <span ng-show="sortType == 'title' && !sortReverse" class="glyphicon glyphicon-menu-down"></span>
+              <span ng-show="sortType == 'title' && sortReverse" class="glyphicon glyphicon-menu-up"></span>
+             </a></th>
+         
+        
+        
+        <th><a ng-click="sortType='author'; sortReverse=!sortReverse" title="Click on sort ">Author Name
+        <span ng-show="sortType == 'author' && !sortReverse" class="glyphicon glyphicon-menu-down"></span>
+              <span ng-show="sortType == 'author' && sortReverse" class="glyphicon glyphicon-menu-up"></span>
+             </a>
+         </th>
+     </tr>
+  </thead>  
+   
+    <tbody> 
+      <tr ng-repeat="x in books| filter:search | orderBy:sortType:sortReverse" >
+          <td>{{ $index+1 }}</td>
+          <td><a href="#screen2?isbn={{x.isbn}}">{{ x.isbn }}</a></td>
+          
+          <td>{{ x.title }}</td>
+         
+          <td>{{ x.author }}</td>
+      </tr>
+    </tbody> 
+ </table>
+</div> 
+<div class="col-sm-2"></div>
+ 
+</div>  
+
